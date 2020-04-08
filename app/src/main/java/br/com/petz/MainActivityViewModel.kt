@@ -1,12 +1,11 @@
 package br.com.petz
 
 import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.OnLifecycleEvent
-import androidx.lifecycle.ViewModel
+import br.com.petz.common.BaseViewModel
 
-class MainActivityViewModel : ViewModel(), LifecycleObserver {
+class MainActivityViewModel : BaseViewModel() {
 
     val name = MutableLiveData<String>()
 
