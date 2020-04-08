@@ -6,6 +6,7 @@ import br.com.petz.di.component.DaggerApplicationComponent
 import br.com.petz.di.module.ApplicationModule
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
+import timber.log.Timber
 import javax.inject.Inject
 
 class PetzApp : Application(), HasAndroidInjector {
@@ -24,6 +25,8 @@ class PetzApp : Application(), HasAndroidInjector {
     override fun onCreate() {
         super.onCreate()
         application.inject(this)
+
+        Timber.plant(Timber.DebugTree())
 
     }
 

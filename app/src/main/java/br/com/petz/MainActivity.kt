@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import dagger.android.AndroidInjection
+import timber.log.Timber
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -18,6 +19,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         Toast.makeText(context, "Marinho", Toast.LENGTH_LONG).show()
+
+        Timber.i("Marinho")
 
     }
 }
