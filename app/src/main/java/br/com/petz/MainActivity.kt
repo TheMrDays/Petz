@@ -17,10 +17,7 @@ class MainActivity : AppCompatActivity() {
         AndroidInjection.inject(this)
         setContentView(R.layout.activity_main)
 
-
-
-//        Toast.makeText(context, "Marinho", Toast.LENGTH_LONG).show()
-
+        Toast.makeText(context, "Marinho", Toast.LENGTH_LONG).show()
 
     }
 }
