@@ -26,7 +26,9 @@ android {
         debug {
             buildConfigField("String", "BASE_URL", "${debug_baseUrl}")
         }
-
+    }
+    viewBinding {
+        enabled = true
     }
 }
 
@@ -50,6 +52,13 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.6.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'
+
+    //Lifecycle
+    implementation "android.arch.lifecycle:runtime:1.1.1"
+
+    //Androidx
+    implementation 'androidx.core:core:1.2.0'
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
