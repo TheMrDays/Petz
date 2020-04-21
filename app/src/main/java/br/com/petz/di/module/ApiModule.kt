@@ -1,6 +1,6 @@
 package br.com.petz.di.module
 
-import br.com.petz.di.data.network.api.NameApi
+import br.com.petz.di.data.network.api.UserApi
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -9,7 +9,7 @@ import retrofit2.Retrofit
 class ApiModule {
 
     @Provides
-    fun providesNameApi(retrofit: Retrofit): NameApi =
-        retrofit.create(NameApi::class.java)
+    fun providesNameApi(retrofit: Retrofit): UserApi =
+        retrofit.create(UserApi::class.java)
 
 }

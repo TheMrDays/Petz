@@ -19,19 +19,17 @@ class NetworkModule {
     @Provides
     fun providesBaseUrl() = checkNotNull(HttpUrl.parse(BuildConfig.BASE_URL)) { "BASE_URL is null" }
 
+//    @Singleton
+//    @Provides
+//    fun provideOkHttpClient(loggingInterceptor: HttpLoggingInterceptor) =
+//        OkHttpClient.Builder()
+//            .addInterceptor(loggingInterceptor)
+//            .build()
+
     @Singleton
     @Provides
-    fun provideOkHttpClient(loggingInterceptor: HttpLoggingInterceptor): OkHttpClient {
-        return OkHttpClient.Builder()
-            .addInterceptor(loggingInterceptor)
-            .build()
-    }
-
-        @Singleton
-    @Provides
-    fun providesRetrofit(httpUrl: HttpUrl, client: OkHttpClient): Retrofit =
+    fun providesRetrofit(httpUrl: HttpUrl) =
         Retrofit.Builder()
-            .client(client)
             .baseUrl(httpUrl)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
