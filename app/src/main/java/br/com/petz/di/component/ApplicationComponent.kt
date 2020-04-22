@@ -2,7 +2,6 @@ package br.com.petz.di.component
 
 
 import br.com.petz.PetzApp
-import br.com.petz.common.base.repository.RepositoryModule
 import br.com.petz.di.module.ActivityModule
 import br.com.petz.di.module.ApplicationModule
 import br.com.petz.di.module.NetworkModule

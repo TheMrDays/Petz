@@ -6,7 +6,7 @@ import retrofit2.http.GET
 
 interface UserApi {
 
-    @GET("api/v2/pokemon/1")
+    @GET("api/v2/pokemon/3")
     fun getPokemon(): Call<Pokemon>
 }
 
