@@ -37,7 +37,6 @@ class MainActivity : BaseActivity() {
         lifecycle.addObserver(viewModel)
 
         viewModel.dogProfile.observe(this, Observer { dog ->
-
             glide
                 .load(dog.image)
                 .into(binding.imgDog)
