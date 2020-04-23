@@ -6,6 +6,8 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
 
+apply plugin: 'com.google.gms.google-services'
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
@@ -59,6 +61,13 @@ dependencies {
     //Androidx
     implementation 'androidx.core:core:1.2.0'
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+
+    //Firebase
+    implementation 'com.google.firebase:firebase-analytics:17.3.0'
+
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'

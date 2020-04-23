@@ -1,4 +1,4 @@
-package br.com.petz
+package br.com.petz.ui
 
 import android.content.Context
 import android.os.Bundle
@@ -7,7 +7,8 @@ import androidx.lifecycle.ViewModelProvider
 import br.com.petz.base.activity.BaseActivity
 import br.com.petz.base.viewmodel.MainViewModelFactory
 import br.com.petz.databinding.ActivityMainBinding
-import br.com.petz.di.data.repository.UserRepositoryImpl
+import br.com.petz.di.data.repository.DogRepositoryImpl
+import com.bumptech.glide.RequestManager
 import dagger.android.AndroidInjection
 import javax.inject.Inject
 
@@ -17,7 +18,10 @@ class MainActivity : BaseActivity() {
     lateinit var context: Context
 
     @Inject
-    lateinit var userRepository: UserRepositoryImpl
+    lateinit var userRepository: DogRepositoryImpl
+
+    @Inject
+    lateinit var glide: RequestManager
 
     private val factory by lazy { MainViewModelFactory(userRepository) }
 
@@ -32,8 +36,16 @@ class MainActivity : BaseActivity() {
         viewModel = ViewModelProvider(this, factory).get(MainActivityViewModel::class.java)
         lifecycle.addObserver(viewModel)
 
-        viewModel.pokemon.observe(this, Observer { pokemon ->
-            binding.txtTitle.text = pokemon.toString()
+        viewModel.dogProfile.observe(this, Observer { dog ->
+
+            glide
+                .load(dog.image)
+                .into(binding.imgDog)
+
+            binding.dogName.text = dog.name
+            binding.dogBreed.text = dog.breed
+            binding.dogGenre.text = dog.genre
+            binding.dogHumanParents.text = dog.humanParents
         })
     }
 }

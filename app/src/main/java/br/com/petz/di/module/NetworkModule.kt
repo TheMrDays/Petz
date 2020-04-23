@@ -4,15 +4,11 @@ import br.com.petz.BuildConfig
 import dagger.Module
 import dagger.Provides
 import okhttp3.HttpUrl
-import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
-@Module(
-    includes = [ApiModule::class]
-)
+@Module
 class NetworkModule {
 
     @Singleton

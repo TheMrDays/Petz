@@ -1,18 +1,18 @@
-package br.com.petz
+package br.com.petz.ui
 
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.OnLifecycleEvent
 import br.com.petz.common.BaseViewModel
-import br.com.petz.di.data.network.response.Pokemon
-import br.com.petz.di.data.repository.UserRepositoryImpl
+import br.com.petz.di.data.network.response.DogProfile
+import br.com.petz.di.data.repository.DogRepositoryImpl
 
 
 class MainActivityViewModel constructor(
-    val userRepository: UserRepositoryImpl
+    private val userRepository: DogRepositoryImpl
 ) : BaseViewModel() {
 
-    val pokemon: LiveData<Pokemon> = userRepository.getPokemon()
+    val dogProfile: LiveData<DogProfile> = userRepository.getDogProfile()
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun onCreate() {
